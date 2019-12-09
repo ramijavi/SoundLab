@@ -13,7 +13,7 @@ var isPlaying = true;
 function setup()
 {
     //Populating array of maxiOsc objects
-    for(i = 0; i < 5; i++){
+    for(i = 0; i < 50; i++){
         waves.push(new maximJs.maxiOsc());
     }
     
@@ -70,9 +70,8 @@ function playLoop()
 {
     let waveSum = 0;
     for (i = 0; i < waves.length; i++){
-        waveSum = waves[i].sinewave(Math.random(100, 200));
+        waveSum = waves[i].sinewave(random(10, 1000));
     }
-    print(waveSum*amp);
     this.output = waveSum * amp;
     drawValues.push(this.output);
     drawValues.shift();
